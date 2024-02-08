@@ -5,8 +5,7 @@ import { User } from "src/user/schemas/user.schema";
 import { ACCESS_JWT_SECRET, REFRESH_JWT_SECRET } from "./constants/auth.constant";
 import { InjectModel } from "@nestjs/mongoose";
 import { Token } from "./schemas/token.schema";
-import { Model } from "mongoose";
-import { Types } from "mongoose";
+import { Model, Types } from "mongoose";
 
 @Injectable()
 export class TokenService {
@@ -23,12 +22,17 @@ export class TokenService {
         return {accessToken, refreshToken}
     }
 
-    async saveToken(refreshToken: string, userId: string | Types.ObjectId) {
+    async saveToken(refreshToken: string, userId: string) {
+        const tokenData = await this.tokenModel.findOne({user: userId })
+        if(tokenData) {
+            tokenData.token = refreshToken
+            tokenData.save()
+        }
         const token = await this.tokenModel.create({token: refreshToken, user: userId})
         return token
     }
 
-    async delete(id: string | Types.ObjectId) {
+    async delete(id: string) {
         await this.tokenModel.deleteOne({_id: id})
     }
 
@@ -36,5 +40,4 @@ export class TokenService {
         const token = await this.tokenModel.findOne({token: refreshToken})
         return token
     }
-
 }
