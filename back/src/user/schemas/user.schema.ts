@@ -1,9 +1,13 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import mongoose, { Types } from "mongoose";
+import { Transform, Type } from "class-transformer";
+import { Types } from "mongoose";
 import { Token } from "src/auth/schemas/token.schema";
 
-@Schema()
+@Schema({timestamps: true})
 export class User {
+    @Transform(({ value }) => value.toString())
+    _id: string
+
     @Prop()
     name?: string
 
@@ -19,10 +23,11 @@ export class User {
     @Prop({default: false})
     isAuth: boolean
 
-    @Prop({ type: { type: mongoose.Schema.Types.ObjectId, ref: 'tokens'}})
-    token: Token
+    @Prop({ default: Date.now })
+    createdAt!: Date
 
-    _id: Types.ObjectId | string
+    @Prop({ default: Date.now })
+    updatedAt!: Date
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)
