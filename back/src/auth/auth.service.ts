@@ -40,7 +40,8 @@ export class AuthService {
     const dto = {
       id: user._id,
       phone: user.phone,
-      name: user.name
+      name: user.name,
+      role: user.role
     }
     const tokens = this.tokenService.generateTokens(user)
     await this.tokenService.saveToken(tokens.refreshToken, user._id)

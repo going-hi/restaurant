@@ -15,8 +15,8 @@ export class TokenService {
         @InjectModel(Token.name) private tokenModel: Model<Token>
     ) {}
 
-    generateTokens({phone, name, _id}: User) {
-        const payload = {id: _id, phone, name}
+    generateTokens({phone, name, _id, role}: User) {
+        const payload = {id: _id, phone, name, role}
         const accessToken = this.jwtService.sign(payload, {expiresIn: '30m', secret: this.configService.get(ACCESS_JWT_SECRET)})
         const refreshToken = this.jwtService.sign(payload, {expiresIn: '15d', secret: this.configService.get(REFRESH_JWT_SECRET)})
         return {accessToken, refreshToken}
