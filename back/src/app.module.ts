@@ -6,6 +6,7 @@ import { mongoConfigOptions } from './configs/mongo.config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { SmsModule } from './sms/sms.module';
+import { CategoryModule } from './category/category.module';
 
 
 @Module({
@@ -18,7 +19,8 @@ import { SmsModule } from './sms/sms.module';
     }),
     AuthModule,
     UserModule,
-    SmsModule
+    SmsModule,
+    CategoryModule
   ],
   controllers: [],
   providers: [],
