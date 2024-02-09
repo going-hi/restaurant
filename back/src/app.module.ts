@@ -7,6 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { SmsModule } from './sms/sms.module';
 import { CategoryModule } from './category/category.module';
+import { DishModule } from './dish/dish.module';
+import { FileModule } from './file/file.module';
 
 
 @Module({
@@ -20,7 +22,9 @@ import { CategoryModule } from './category/category.module';
     AuthModule,
     UserModule,
     SmsModule,
-    CategoryModule
+    CategoryModule,
+    DishModule,
+    FileModule
   ],
   controllers: [],
   providers: [],
