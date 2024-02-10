@@ -9,6 +9,8 @@ import { SmsModule } from './sms/sms.module';
 import { CategoryModule } from './category/category.module';
 import { DishModule } from './dish/dish.module';
 import { FileModule } from './file/file.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { ServeStaticConfigOptions } from './configs/server-static.config';
 
 
 @Module({
@@ -19,6 +21,7 @@ import { FileModule } from './file/file.module';
       inject: [ConfigService],
       useFactory: mongoConfigOptions
     }),
+    ServeStaticModule.forRoot(ServeStaticConfigOptions()),
     AuthModule,
     UserModule,
     SmsModule,
