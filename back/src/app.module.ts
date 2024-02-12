@@ -13,6 +13,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { ServeStaticConfigOptions } from './configs/server-static.config';
 import { BasketModule } from './basket/basket.module';
 import { GallaryModule } from './gallary/gallary.module';
+import { PromotionModule } from './promotion/promotion.module';
 
 
 @Module({
@@ -31,7 +32,8 @@ import { GallaryModule } from './gallary/gallary.module';
     DishModule,
     FileModule,
     BasketModule,
-    GallaryModule
+    GallaryModule,
+    PromotionModule
   ],
   controllers: [],
   providers: [],
