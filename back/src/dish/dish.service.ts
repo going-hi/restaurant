@@ -42,11 +42,12 @@ export class DishService {
       const oldDish = await this.dishModel.findOne({name: dto.name})
       if(oldDish) throw new BadRequestException("Блюдо с таким именем уже существует")
     }
-    return await this.dishModel.updateOne({_id: dish._id}, {...dto})
+    return await this.dishModel.findOneAndUpdate({_id: dish._id}, {...dto}, {returnDocument: 'after'})
   }
 
   async remove(id: string) {
-    await this.findOne(id)
+    const {photo} = await this.findOne(id)
     await this.dishModel.deleteOne({_id: id})
+    await this.fileService.delete(photo)
   }
 }
