@@ -12,6 +12,7 @@ import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { ServeStaticConfigOptions } from './configs/server-static.config';
 import { BasketModule } from './basket/basket.module';
+import { GallaryModule } from './gallary/gallary.module';
 
 
 @Module({
@@ -29,7 +30,8 @@ import { BasketModule } from './basket/basket.module';
     CategoryModule,
     DishModule,
     FileModule,
-    BasketModule
+    BasketModule,
+    GallaryModule
   ],
   controllers: [],
   providers: [],
