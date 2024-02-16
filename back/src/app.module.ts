@@ -14,6 +14,7 @@ import { ServeStaticConfigOptions } from './configs/server-static.config';
 import { BasketModule } from './basket/basket.module';
 import { GallaryModule } from './gallary/gallary.module';
 import { PromotionModule } from './promotion/promotion.module';
+import { PromoCodeModule } from './promo-code/promo-code.module';
 
 
 @Module({
@@ -33,7 +34,8 @@ import { PromotionModule } from './promotion/promotion.module';
     FileModule,
     BasketModule,
     GallaryModule,
-    PromotionModule
+    PromotionModule,
+    PromoCodeModule
   ],
   controllers: [],
   providers: [],
