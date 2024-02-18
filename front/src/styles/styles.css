@@ -1,0 +1,22 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 18px;
+    border: none;
+    text-decoration: none;
+    color: aliceblue;
+    background: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+
+.container {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
