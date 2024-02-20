@@ -4,6 +4,8 @@ import downArrow from '../../img/down-btn.svg'
 import facebook from '../../img/facebook.svg'
 import inst from '../../img/inst.svg'
 import twitter from '../../img/twitter.svg'
+import stylesButton from '../ui/button/Button.module.scss'
+import { Line } from "../ui/line/Line"
 
 export const Header = () => {
     return (
@@ -15,11 +17,13 @@ export const Header = () => {
             <div className={styles.intro}>
                 <h2 className={styles.intro__headline__male}>restaurant</h2>
                 <h1 className={styles.intro__headline__main}>hungry people</h1>
-                <div className={styles.intro__linear}></div>
-                <a href ="#g" className={`btn ${styles.intro__button__yellow}`}>book table</a>
-                <a href ="#g"className={`btn ${styles.intro__button__proz}`}>explore</a>
+                <Line />
+                <div className={styles.intro__btn__group}>
+                    <a href ="#g" className={`${stylesButton.btn} ${stylesButton.btn__intro__yellow}`}>book table</a>
+                    <a href ="#g"className={`${stylesButton.btn} ${stylesButton.btn__intro__proz}`}>explore</a>
+                </div>
                 <div>
-                    <a href ="#g"className={`${styles.intro__button__arrow} btn`}>
+                    <a href ="#g"className={`${stylesButton.btn__intro__arrow} ${stylesButton.btn}`}>
                         <img src={downArrow} alt="alt" />
                     </a>
                 </div>

@@ -27,6 +27,7 @@
     }
 
     &__headline__main {
+        padding-top: 10px;
         text-transform: uppercase;
         color: #fff;
         font-size: 96px;
@@ -37,27 +38,8 @@
         letter-spacing: 5px
     }
 
-    &__button__yellow {
-        font-size: 16px !important;
-        border-radius: 5px !important;
-        text-transform: uppercase !important;
-        font-weight: 600 !important;
-        padding: 25px 55px !important;
-        background-color: #E8C300  !important;
-        color: #fff !important;
-        border: #E8C300 1px solid !important;
-        margin: 0 25px !important;
-    }
-
-    &__button__proz {
-        font-size: 16px !important;
-        border-radius: 5px !important;
-        text-transform: uppercase !important;
-        font-weight: 600 !important;
-        padding: 25px 70px !important;
-        color: #fff !important;
-        border: #ffffff80 1px solid !important;
-        margin: 0 25px !important;
+    &__btn__group {
+        padding-top: 60px;
     }
 
     &__linear {
