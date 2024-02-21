@@ -55,9 +55,10 @@
 
     &__cyrcle {
         border-radius: 50%;
-        width: 15px;
-        height: 15px;
-        background: #696969;
+        width: 13px;
+        height: 13px;
+        background: inherit;
+        border: 2px solid #fff;
         margin: 0 5px;
         cursor: pointer;
     }
