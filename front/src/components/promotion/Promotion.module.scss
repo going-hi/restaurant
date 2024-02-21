@@ -1,0 +1,38 @@
+.promotion {
+    background-image: url("../../img/png/specialt-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    
+    
+    &__inner {
+        text-align: center;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__headline {
+        font-size: 35px;
+        color: #fff;
+    }
+
+    &__text {
+        color: #fff;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    &__cyrcles {
+        bottom: 20px;
+        left: 0;
+    }
+
+    &__category {
+        top: 40px;
+    }
+}
