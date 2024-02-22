@@ -15,14 +15,21 @@
     }
 
     &__icon {
+        transition: all .2s linear;
         padding: 25px;
         border-radius: 100%;
         border: 1px solid #ffffff52;
         display: flex;
         margin: 0 20px;
+
         > img {
             width: 20px;
             height: 20px;
         }
+
+        &:hover {
+            border-color: #E8C300;
+        }
+
     }
 }

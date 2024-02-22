@@ -19,10 +19,13 @@
         color: #fff;
         border: #ffffff80 1px solid;
         margin: 0 25px;
+        box-shadow: 0 0 0 0 #E8C300 inset;
+        transition:  box-shadow .2s linear;
 
-        // &:hover {
 
-        // }
+        &:hover {
+            box-shadow: 0 0 40px 40px #E8C300 inset;
+        }
     }
 
     &__intro__yellow {
@@ -31,16 +34,27 @@
         text-transform: uppercase;
         font-weight: 600;
         padding: 25px 55px;
-        background-color: #E8C300;
+        background: #E8C300;
         color: #fff ;
         border: #E8C300 1px solid;
         margin: 0 25px;
+        transition:  all .2s linear;
+
+
+        &:hover {
+           background: initial;
+           border: #ffffff80 1px solid;
+        }
     }
 
     &__intro__arrow {
         display: inline-block ;
         padding: 0;
         padding-top: 110px;
+
+        &:hover {
+            animation: btnArrow 1.4s cubic-bezier(0, 0.6, 1, 0.4) infinite .2s;
+        }
     }
 
 
@@ -88,5 +102,14 @@
         font-size: 20px;
         border-radius: 5px;
         padding: 20px 50px;
+    }
+}
+
+@keyframes btnArrow {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
     }
 }

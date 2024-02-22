@@ -30,5 +30,10 @@
 
     &__logo {
         margin: 0px 60px;
+        transition: transform .5s linear;
+
+        &:hover {
+            transform: rotate(-90deg)
+        }
     }
 }
