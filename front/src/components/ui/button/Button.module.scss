@@ -5,7 +5,7 @@
     border: none;
     text-decoration: none;
     color: #fff;
-    background: inherit;
+    background: initial;
     cursor: pointer;
     text-align: center;
     
@@ -78,21 +78,29 @@
     }
 
     &__promotion__arrow__left {
+        padding: 0;
         position: absolute;
-        top: auto;
-        bottom: auto;
-        left: -130px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        left: 50px;
         text-align: center;
         transform: rotate(90deg);
+        height: 62px;
+        z-index: 101;
     }
 
     &__promotion__arrow__right {
+        padding: 0;
         position: absolute;
-        top: auto;
-        bottom: auto;
-        right: -130px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        right: 50px;
         text-align: center;
         transform: rotate(-90deg);
+        height: 62px;
+        z-index: 101;
     }
 
     &__table {
