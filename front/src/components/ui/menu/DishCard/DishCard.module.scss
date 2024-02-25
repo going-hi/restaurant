@@ -1,0 +1,71 @@
+.dishCard {
+    &__items {
+        padding: 50px 0 30px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+        width: 24%;
+        padding: 15px;
+        border-radius: 20px;
+        border: #333333 1px solid;
+        text-align: left;
+        background: #333333;
+        color: azure;
+        border: 2px solid #ffd500;
+
+        &__title {
+            padding-top: 10px;
+            // font-family: 'Aboreto', sans-serif;
+            font-size: 22px;
+            // font-weight: 600;
+
+            font-family: 'M PLUS 1p', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        &__description {
+            padding-top: 10px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        &__image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+        
+        &__category {
+            color: rgb(235, 0, 0);
+            padding-top: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-family: 'Aboreto', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        &__count {
+            display: flex;
+            padding: 15px 0;
+        } 
+
+        &__price {
+            font-size: 30px;
+            font-weight: 600;
+            color: #ffd500;
+        }
+
+        &__discount {
+            font-size: 18px;
+            color: #ffffffb2;
+            text-decoration: line-through;
+            padding-left: 10px;
+        }
+    }
+}
