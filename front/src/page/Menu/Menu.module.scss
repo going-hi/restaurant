@@ -1,0 +1,14 @@
+.menu {
+    text-align: center;
+    padding: 40px;
+
+
+    &__block__btn {
+        display: flex;
+        justify-content: center;
+
+        > button {
+            margin: 0 2px;
+        }
+    }
+}
