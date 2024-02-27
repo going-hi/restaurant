@@ -5,7 +5,7 @@ import { Line } from '../ui/line/Line'
 
 export const SectionBackground = (props: any) => {
     return (
-        <section className={specialtyStyles.specialty + " "  + style.ourTeam}>
+        <section className={specialtyStyles.specialty + " "  + style.ourTeam + " " + props.position}>
 
             <div className="container">
 
