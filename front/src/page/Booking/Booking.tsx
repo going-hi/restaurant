@@ -42,8 +42,12 @@ export const BookingPage = () => {
             </section>
             <section className={styles.booking__map}>
                 <Container>
+                    <div className={styles.booking__content}>
+                        <input type="date" className={styles.booking__input__date} />
+                    </div>
+                   
+
                    <div className={styles.booking__map__inner}>
-                    
                         <div className={styles.booking__tables} style={{width: '50%'}}>
 
                             <div className={styles.booking__hall}>
