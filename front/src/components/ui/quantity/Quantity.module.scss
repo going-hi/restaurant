@@ -1,0 +1,42 @@
+.quantity {
+    display: flex;
+
+
+    &__input {
+
+        max-width: 55px;
+        text-align: center;
+        font-weight: 500;
+        background-color: inherit;
+        border: none;
+        color: #000;
+        font-size: 22px;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        font-weight: 600;
+        font-size: 25px;
+        color: #fff;
+        background-color: #000000;
+        border-radius: 3px;
+        cursor: pointer;
+        user-select: none;
+
+        &__minus {
+            @extend .quantity__button;
+            // background-color: #989797;
+        }
+
+        &__plus {
+            @extend .quantity__button;
+
+
+
+        }
+    }
+}
