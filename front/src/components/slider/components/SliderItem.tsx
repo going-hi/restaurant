@@ -3,7 +3,6 @@ import stylesSection from '../../section/Section.module.scss'
 import stylesButton from '../../ui/button/Button.module.scss'
 import stylesSpecially from '../../specialty/Specialty.module.scss'
 import { Line } from "../../ui/line/Line";
-import Arrow from '../../img/down-btn.svg'
 
 export const SliderItem = (props: any) => {
     return  (

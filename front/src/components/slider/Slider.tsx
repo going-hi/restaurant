@@ -1,15 +1,11 @@
 import styles from "../promotion/Promotion.module.scss";
-import stylesSection from '../section/Section.module.scss'
-import stylesButton from '../ui/button/Button.module.scss'
 import stylesSpecially from '../specialty/Specialty.module.scss'
-import { Line } from "../ui/line/Line";
-import Arrow from '../../img/down-btn.svg'
 import { useEffect, useState } from "react";
 import { SliderItem } from "./components/SliderItem";
 import { ArrowLeft, ArrowRight } from "./components/Arrow";
 
 export const Slider = (props: any) => {
-  const [data, setData] = useState(props.array)
+    const [data,] = useState(props.array)
     const [currentIndex, setCurrentIndex] = useState(0)
 
     useEffect(() => {
