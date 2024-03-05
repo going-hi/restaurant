@@ -157,6 +157,42 @@
         opacity: 0;
         transition: opacity .1s linear;
     }
+
+    &__profile__update {
+        background: #000;
+        color: #fff;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transition: background .2s linear;
+
+        &:hover {
+            background: #12063d;
+        }
+    }
+    &__profile__save {
+        background: #E8C300;
+        color: #fff;
+        border-radius: 5px;
+        transition: background .2s linear;
+        display: block;
+        margin: 0 auto;
+        &:hover {
+            background: #000;
+        }
+    }
+
+    &__profile__logout {
+        background: rgb(218, 0, 0);
+        color: #fff;
+        border-radius: 5px;
+        transition: background .2s linear;
+        display: block;
+        margin: 0 auto;
+        &:hover {
+            background: #000;
+        }
+    }
+
 }
 
 @keyframes btnArrow {
