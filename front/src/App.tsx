@@ -1,6 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import { Footer } from "./components/footer/Footer";
-import { MainPage } from "./page/Main";
+import { MainPage } from "./page/Main/Main";
+import { MenuPage } from "./page/Menu/Menu";
+import { ContactPage } from "./page/Contact/Contact";
+import { ReviewsPage } from "./page/Reviews/Reviews";
+import { BookingPage } from "./page/Booking/Booking";
+import { CartPage } from "./page/Cart/Cart";
+import { ProfilePage } from "./page/Profile/Profile";
+import { GaleriePage } from "./page/Galerie/Galerie";
+
 
 const App = () => {
   return (
@@ -12,51 +20,51 @@ const App = () => {
           <Footer/>
         </>
       }/>
-      <Route path="/about" element={
+      <Route path="/cart" element={
         <>
-          <MainPage/>
+          <CartPage/>
           <Footer/>
         </>
       }/>
 
-      <Route path="/team" element={
+      <Route path="/profile" element={
         <>
-          <MainPage/>
+          <ProfilePage/>
           <Footer/>
         </>
       }/>
 
       <Route path="/booking" element={
         <>
-          <MainPage/>
+          <BookingPage/>
           <Footer/>
         </>
       }/>
 
       <Route path="/menu" element={
         <>
-          <MainPage/>
+          <MenuPage/>
           <Footer/>
         </>
       }/>
       
       <Route path="/galerie" element={
         <>
-          <MainPage/>
+          <GaleriePage/>
           <Footer/>
         </>
       }/>
 
-      <Route path="/events" element={
+      <Route path="/reviews" element={
         <>
-          <MainPage/>
+          <ReviewsPage/>
           <Footer/>
         </>
       }/>
 
-      <Route path="/contect" element={
+      <Route path="/contact" element={
         <>
-          <MainPage/>
+          <ContactPage/>
           <Footer/>
         </>
       }/>
