@@ -1,5 +1,5 @@
 import styles from './Specialty.module.scss'
-import sectionStyles from '../../components/about/About.module.scss'
+import sectionStyles from '../section/Section.module.scss'
 import photo from '../../img/Rectangle.png'
 import { Line } from '../ui/line/Line'
 
