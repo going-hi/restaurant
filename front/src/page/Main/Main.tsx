@@ -1,18 +1,15 @@
 import { Header } from "../../components/header/Header"
 import { Gallary } from "../../components/gallary/Gallary"
 import { Menu } from "../../components/menu/Menu"
-import { OurTeam } from "../../components/ourTeam/OurTeam"
-import { Promotion } from "../../components/promotion/Promotion"
 import { Specialty } from "../../components/specialty/Specialty"
 import { Section } from "../../components/section/Section"
-import Photo from '../img/about-img.png'
-import Photo1 from '../img/png/about-img.png'
-import Background from '../img/png/specialt-bg.png'
+import Photo from '../../img/about-img.png'
+import Photo1 from '../../img/png/about-img.png'
+import Background from '../../img/png/specialt-bg.png'
 import { Slider } from "../../components/slider/Slider"
 import { SectionBackground } from "../../components/section/SectionRight"
-import Photo2 from '../img/Rectanglef.png'
-import { SliderSection } from "../../components/slider/SliderSection"
-import photo3 from '../img/Rectangle.png'
+import Photo2 from '../../img/Rectanglef.png'
+import photo3 from '../../img/Rectangle.png'
 const loremDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.'
 
 const loremText = `Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum,
