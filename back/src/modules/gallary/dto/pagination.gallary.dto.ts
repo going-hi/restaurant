@@ -1,5 +1,5 @@
 import { IsOptional, IsString } from "class-validator";
-import { PaginationDto } from "src/common/pagination.dto";
+import { PaginationDto } from "@core/pagination";
 
 export class PaginationGallaryDto extends PaginationDto{
     @IsOptional()
