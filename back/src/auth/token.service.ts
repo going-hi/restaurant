@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
-import { User } from "src/user/schemas/user.schema";
-import { ACCESS_JWT_SECRET, REFRESH_JWT_SECRET } from "./constants/auth.constant";
+import { User } from "@modules/user/schemas/user.schema";
+import { ACCESS_JWT_SECRET, REFRESH_JWT_SECRET } from "./constants";
 import { InjectModel } from "@nestjs/mongoose";
 import { Token } from "./schemas/token.schema";
-import { Model, Types } from "mongoose";
+import { Model } from "mongoose";
 
 @Injectable()
 export class TokenService {

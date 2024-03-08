@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { SmsModule } from 'src/sms/sms.module';
-import { UserModule } from 'src/user/user.module';
+import { SmsModule } from '@/notification/sms/sms.module';
+import { UserModule } from '@modules/user/user.module';
 import { JwtModule } from '@nestjs/jwt';
 import { TokenService } from './token.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -11,10 +11,10 @@ import { AccessJwtStrategy, RefreshJwtStrategy } from './strategies';
 
 @Module({
   imports: [
-    SmsModule, 
+    SmsModule,
     UserModule,
     JwtModule.register({}),
-    MongooseModule.forFeature([{ name: Token.name, schema: TokenSchema }])
+    MongooseModule.forFeature([{ name: Token.name, schema: TokenSchema }]),
   ],
   controllers: [AuthController],
   providers: [AuthService, TokenService, AccessJwtStrategy, RefreshJwtStrategy],

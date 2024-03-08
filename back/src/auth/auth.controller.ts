@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, Res, HttpCode, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, UsePipes, ValidationPipe, Res, HttpCode, HttpStatus } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ActiveAccountDto } from './dto';
 import { CookieOptions, Response } from 'express';
-import { REFRESH_TOKEN_COOKIE } from './constants/auth.constant';
-import { User } from 'src/user/decorators';
-import { Cookie, RefreshJwtGuard } from './decorators';
+import { REFRESH_TOKEN_COOKIE } from './constants';
+import { RefreshJwtGuard } from './guards';
+import { Cookie, User } from '@/core/decorators';
+
 
 @UsePipes(new ValidationPipe())
 @Controller('auth')
