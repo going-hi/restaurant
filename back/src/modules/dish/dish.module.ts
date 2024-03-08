@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { DishService } from './dish.service';
 import { DishController } from './dish.controller';
-import { Dish, DishSchema } from './schemas/dish.schema';
+import Dish, { DishSchema } from './schemas/dish.schema';
 import { MongooseModule } from '@nestjs/mongoose';
-import { FileModule } from 'src/file/file.module';
+import { FileModule } from '@/core/file/file.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Dish.name, schema: DishSchema }]),
-    FileModule
+    FileModule,
   ],
   controllers: [DishController],
   providers: [DishService],

@@ -1,13 +1,10 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Transform } from "class-transformer";
 import { Types } from "mongoose";
-import { Category } from "src/category/schemas/category.schema";
+import { Category } from "@modules/category/schemas/category.schema";
+import { AbstractSchema } from "@/core/abstract";
 
 @Schema({timestamps: true})
-export class Dish {
-    @Transform(({ value }) => value.toString())
-    _id: string
-
+export default class Dish extends AbstractSchema{
     @Prop({ required: true, unique: true })
     name: string
 
@@ -26,12 +23,6 @@ export class Dish {
 
     @Prop({ type: [{ type: Types.ObjectId, ref: 'Category' }] })
     categories: Category[]
-
-    @Prop({ default: Date.now })
-    createdAt!: Date
-
-    @Prop({ default: Date.now })
-    updatedAt!: Date
 }
 
 export const DishSchema = SchemaFactory.createForClass(Dish)
