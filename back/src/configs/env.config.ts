@@ -1,6 +1,6 @@
 import { ConfigModuleOptions } from "@nestjs/config";
 import { IsNumber, IsString } from "class-validator";
-import { envValidate } from "src/common/env.validation";
+import { envValidate } from "@/core/utils/env.validation";
 
 export class EnviromentVariables {
     @IsNumber()
