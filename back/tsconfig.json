@@ -11,9 +11,11 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@auth/*": ["./src/auth/*"],
+      "@core/*": ["./src/core/*"],
+      "@configs": ["./src/configs"]
     },
     "incremental": true,
     "skipLibCheck": true,
