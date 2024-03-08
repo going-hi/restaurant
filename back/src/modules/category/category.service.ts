@@ -7,8 +7,7 @@ import { CreateCategoryDto } from './dto/create-category.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Category } from './schemas/category.schema';
 import { Model } from 'mongoose';
-import { PaginationDto } from 'src/common/pagination.dto';
-import { ReturnPagination } from '@/core/pagination/return-pagination.dto';
+import { ReturnPagination, PaginationDto } from '@/core/pagination';
 
 @Injectable()
 export class CategoryService {

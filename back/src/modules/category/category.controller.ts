@@ -16,7 +16,7 @@ import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto';
 import { RoleAuthGuard } from '@auth/guards';
 import { RoleEnum } from '@/core/enums';
-import { PaginationDto } from 'src/common/pagination.dto';
+import { PaginationDto } from '@core/pagination';
 
 @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
 @Controller('category')
