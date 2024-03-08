@@ -1,3 +1,4 @@
+import { AbstractSchema } from "@/core/abstract";
 import { Prop, Schema, SchemaFactory, raw } from "@nestjs/mongoose";
 import { Transform } from "class-transformer";
 
@@ -9,10 +10,7 @@ export enum DiscountType {
 type discountKey = 'count' | 'type'
 
 @Schema({timestamps: true})
-export class PromoCode {
-    @Transform(({ value }) => value.toString())
-    _id: string
-
+export class PromoCode extends AbstractSchema{
     @Prop({ required: true })
     code: string
 
@@ -24,12 +22,6 @@ export class PromoCode {
 
     @Prop({default: null})
     description: string
-
-    @Prop({ default: Date.now })
-    createdAt!: Date
-
-    @Prop({ default: Date.now })
-    updatedAt!: Date
 }
 
 
