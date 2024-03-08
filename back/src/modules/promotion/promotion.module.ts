@@ -3,12 +3,14 @@ import { PromotionService } from './promotion.service';
 import { PromotionController } from './promotion.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Promotion, PromotionSchema } from './schemas/promotion.schema';
-import { FileModule } from 'src/file/file.module';
+import { FileModule } from '@/core/file/file.module';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Promotion.name, schema: PromotionSchema }]),
-    FileModule
+    MongooseModule.forFeature([
+      { name: Promotion.name, schema: PromotionSchema },
+    ]),
+    FileModule,
   ],
   controllers: [PromotionController],
   providers: [PromotionService],

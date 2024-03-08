@@ -1,28 +1,43 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, UseInterceptors, UploadedFile, ParseFilePipe, FileTypeValidator, HttpStatus, HttpCode } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UsePipes,
+  ValidationPipe,
+  UseInterceptors,
+  UploadedFile,
+  ParseFilePipe,
+  FileTypeValidator,
+  HttpStatus,
+  HttpCode,
+} from '@nestjs/common';
 import { PromotionService } from './promotion.service';
-import { CreatePromotionDto } from './dto/create-promotion.dto';
-import { UpdatePromotionDto } from './dto/update-promotion.dto';
+import { CreatePromotionDto, UpdatePromotionDto } from './dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { RoleAuth } from 'src/role/decorators';
-import { Role } from 'src/role/Role.enum';
+import { RoleAuthGuard } from '@auth/guards';
+import { RoleEnum } from '@/core/enums';
 
-
-@UsePipes(new ValidationPipe({whitelist: true, transform: true}))
+@UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
 @Controller('promotion')
 export class PromotionController {
   constructor(private readonly promotionService: PromotionService) {}
 
   @HttpCode(HttpStatus.CREATED)
-  @RoleAuth(Role.ADMIN)
+  @RoleAuthGuard(RoleEnum.ADMIN)
   @UseInterceptors(FileInterceptor('photo'))
   @Post()
   create(
     @Body() createPromotionDto: CreatePromotionDto,
     @UploadedFile(
-			new ParseFilePipe({
-				validators: [new FileTypeValidator({ fileType: /\/(jpg|jpeg|png)$/ })]
-			})
-      ) photo: Express.Multer.File
+      new ParseFilePipe({
+        validators: [new FileTypeValidator({ fileType: /\/(jpg|jpeg|png)$/ })],
+      }),
+    )
+    photo: Express.Multer.File,
   ) {
     return this.promotionService.create(createPromotionDto, photo);
   }
@@ -40,14 +55,17 @@ export class PromotionController {
   }
 
   @HttpCode(HttpStatus.OK)
-  @RoleAuth(Role.ADMIN)
+  @RoleAuthGuard(RoleEnum.ADMIN)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePromotionDto: UpdatePromotionDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updatePromotionDto: UpdatePromotionDto,
+  ) {
     return this.promotionService.update(id, updatePromotionDto);
   }
 
   @HttpCode(HttpStatus.OK)
-  @RoleAuth(Role.ADMIN)
+  @RoleAuthGuard(RoleEnum.ADMIN)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.promotionService.remove(id);
