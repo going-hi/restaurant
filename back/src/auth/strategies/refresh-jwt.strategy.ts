@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-jwt";
-import { REFRESH_JWT_SECRET, REFRESH_JWT_STRATEGY, REFRESH_TOKEN_COOKIE } from "../constants/auth.constant";
+import { REFRESH_JWT_SECRET, REFRESH_JWT_STRATEGY, REFRESH_TOKEN_COOKIE } from "../constants";
 import { Request } from "express";
 
 @Injectable()
